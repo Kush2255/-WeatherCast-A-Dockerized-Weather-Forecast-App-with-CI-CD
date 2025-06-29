@@ -1,5 +1,5 @@
-# Blog-with-BBC_api
-# Weather Forecast Application
+# WeatherCast – A Dockerized Weather Forecast App with CI/CD
+
 
 ## Description
 This is a Flask-based web application for weather forecasting. It uses web scraping to gather weather data from the BBC Weather website. Users can enter a city name, and the application will display the weather forecast for that city.
@@ -13,7 +13,8 @@ This is a Flask-based web application for weather forecasting. It uses web scrap
 To set up this project, follow these steps:
 
 1. Clone the repository:
-git clone http://github.com/syamkarni/Weather_application-BBC_api-)http://github.com/syamkarni/Weather_application-BBC_api
+git clone http://github.com/syamkarni/Weather_application-BBC_api-)git clone https://github.com/Kush2255/-WeatherCast-A-Dockerized-Weather-Forecast-App-with-CI-CD
+
 2. Install the required packages:
 pip install flask requests beautifulsoup4 pandas
 
@@ -31,3 +32,5 @@ Navigate to `http://localhost:5000` in your web browser. Enter the name of the c
 
 ## Disclaimer
 This project is for educational purposes only. The scraping functionality depends on the structure of the BBC Weather website and may require updates if the website's layout changes.
+# WeatherCast – A Dockerized Weather Forecast App with CI/CD
+
