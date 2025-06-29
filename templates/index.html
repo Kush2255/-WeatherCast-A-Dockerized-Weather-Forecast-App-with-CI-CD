@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <form method="post" class="form">
+            <input type="text" name="city" placeholder="Enter City" class="input">
+            <button type="submit" class="button">Get Weather</button>
+        </form>
+        {% if weather_data %}
+            <div class="weather-data" id="weatherData">
+                {% for item in weather_data %}
+                    <div class="weather-item">
+                        <p class="weather-info.name">{{ item.name }}</p>
+                        <p class="weather-info.date">Date: {{ item.date }}</p>
+                        <p class="weather-info.high">High: {{ item.high.split(' ')[0] }}C, {{ item.high.split(' ')[1] }}F</p>
+                        <p class="weather-info.low">Low: {{ item.low.split(' ')[0] }}C, {{ item.low.split(' ')[1] }}F</p>
+                        <p class="weather-info.summary">Summary: {{ item.summary }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
