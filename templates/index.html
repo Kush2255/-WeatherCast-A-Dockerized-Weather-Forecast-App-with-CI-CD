@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherCast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
+        <h1 class="title">🌤️ WeatherCast – Telangana Districts</h1>
+
         <form method="post" class="form">
-            <input type="text" name="city" placeholder="Enter City" class="input">
+            <select name="city" class="input" required>
+                <option value="">-- Select District --</option>
+                {% for dist in districts %}
+                    <option value="{{ dist }}">{{ dist }}</option>
+                {% endfor %}
+            </select>
             <button type="submit" class="button">Get Weather</button>
         </form>
-        {% if weather_data %}
-            <div class="weather-data" id="weatherData">
-                {% for item in weather_data %}
+
+        <div class="weather-data" id="weatherData">
+            {% if weather_data is mapping and weather_data.error %}
+                <p style="color: red;">{{ weather_data.error }}</p>
+            {% elif weather_data %}
+                {% for day in weather_data %}
                     <div class="weather-item">
-                        <p class="weather-info.name">{{ item.name }}</p>
-                        <p class="weather-info.date">Date: {{ item.date }}</p>
-                        <p class="weather-info.high">High: {{ item.high.split(' ')[0] }}C, {{ item.high.split(' ')[1] }}F</p>
-                        <p class="weather-info.low">Low: {{ item.low.split(' ')[0] }}C, {{ item.low.split(' ')[1] }}F</p>
-                        <p class="weather-info.summary">Summary: {{ item.summary }}</p>
+                        <div class="weather-info name">{{ day.name }}</div>
+                        <div class="weather-info date">{{ day.date }}</div>
+                        <div class="weather-info high">🌡️ High: {{ day.high }}</div>
+                        <div class="weather-info low">❄️ Low: {{ day.low }}</div>
+                        <div class="weather-info summary">📋 {{ day.summary }}</div>
                     </div>
                 {% endfor %}
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>
