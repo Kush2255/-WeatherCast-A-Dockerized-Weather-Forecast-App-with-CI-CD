@@ -1,36 +1,42 @@
 body {
-    background-image: url(https://static.vecteezy.com/system/resources/previews/030/658/258/non_2x/downtempo-chillout-minimalist-desktop-wallpaper-free-photo.jpg);
+    background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80");
     color: #000000;
     width: 100vw;
     height: 100vh;
     background-size: cover;
-    background-position: absolute;
+    background-position: center;
     font-family: Arial, sans-serif;
-    overflow-y: scroll; /* Enable vertical scrolling */
-
+    overflow-y: scroll;
+    margin: 0;
 }
 
 .container {
     width: 90%;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 40px auto;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
     text-align: center;
-
 }
 
 .title {
-    font-size: 2em;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .form {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.input {
+.input, select {
     padding: 10px;
     width: 60%;
+    max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
 }
 
 .button {
@@ -40,6 +46,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
 }
 
 .button:hover {
@@ -48,40 +56,35 @@ body {
 
 .weather-data {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
 }
 
 .weather-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-    margin :10px;
-    min-width: 350px;
-    color: #ffffff;
-
+    background-color: rgba(0, 123, 255, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 280px;
+    max-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: left;
 }
+
 .weather-info.name {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
-    border: 2px solid #333;
-    display: inline-block;
-    padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .weather-info.date {
-    position: absolute; /* Positioned to the right */
-    top: 10px;
-    right: 10px;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
-.weather-info.high,
-.weather-info.low {
-    font-size: 1.2em;
+.weather-info.high, .weather-info.low {
+    font-size: 1.1em;
     margin: 5px 0;
 }
 
